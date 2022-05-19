@@ -5,31 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conhecendo o Firebase</title>
-
+    <script src="fbconfig.js"></script>
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js"
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
         // Your web app's Firebase configuration
         const firebaseConfig = {
-          apiKey: "xyz",
-          authDomain: "xyz",
-          projectId: "xyz",
-          storageBucket: "xyz",
-          messagingSenderId: "xyz",
-          appId: "xyz"
+          apiKey: "AIzaSyD5GXzTCe115vw6GbM6mwbXLFerNHh98UU",
+          authDomain: "controledepresenca-6acb4.firebaseapp.com",
+          projectId: "controledepresenca-6acb4",
+          storageBucket: "controledepresenca-6acb4.appspot.com",
+          messagingSenderId: "494978907320",
+          appId: "1:494978907320:web:cdcaa75af2b5c61601484d"
         };
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         console.dir(app);
-
+        
+        //conecto
         const auth = getAuth();
         console.dir(auth);        
         
+        // Initialize Cloud Firestore and get a reference to the service
+        const db = getFirestore(app);
+        console.dir(db);
+
+        //db features
+        window.inserir_usuario = async function(){
+         try {
+           const docRef = await addDoc(collection(db, "users"), {
+            first: "Richard",
+            last: "Stall",
+            born: ??
+         });
+         console.log("Document written with ID: ", docRef.id);
+         } catch (e) {
+         console.error("Error adding document: ", e);
+         }
+        }//window.inserir_usuario = function() {
+        inserir_usuario();
+         
+        //auth features
+
         window.criar_usuario = function(){ 
           let uEmail = window.document.getElementById("UserEmail").value;         
           let uPass = window.document.getElementById("UserSenha").value;
