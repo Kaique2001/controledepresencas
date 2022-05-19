@@ -16,12 +16,12 @@
       
         // Your web app's Firebase configuration
         const firebaseConfig = {
-          apiKey: "AIzaSyD5GXzTCe115vw6GbM6mwbXLFerNHh98UU",
-          authDomain: "controledepresenca-6acb4.firebaseapp.com",
-          projectId: "controledepresenca-6acb4",
-          storageBucket: "controledepresenca-6acb4.appspot.com",
-          messagingSenderId: "494978907320",
-          appId: "1:494978907320:web:cdcaa75af2b5c61601484d"
+          apiKey: "",
+          authDomain: "",
+          projectId: "",
+          storageBucket: "",
+          messagingSenderId: "",
+          appId: "",
         };
       
         // Initialize Firebase
@@ -42,7 +42,7 @@
            const docRef = await addDoc(collection(db, "users"), {
             first: "Richard",
             last: "Stall",
-            born: ??
+            born: "??",
          });
          console.log("Document written with ID: ", docRef.id);
          } catch (e) {
